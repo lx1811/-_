@@ -55,7 +55,7 @@ export default {
         ]
       },
       user:{
-        mobile:'15982545746',
+        mobile:'13911111111',
         code:'246810'
       },
       isCountDownShow:false,
@@ -64,7 +64,7 @@ export default {
   },
   methods:{
     onClickLeft(){
-
+      this.$router.push('/mine')
     },
     onSendSms(){
       console.log('发送验证码')
@@ -97,6 +97,7 @@ export default {
       login(this.user).then(res=>{
         this.$store.commit('setUser',res.data.data)
         this.$toast.success('登陆成功')
+        this.$router.push('/mine')
       }).catch(err=>{
         console.log(err)
         this.$toast.fail('登陆失败')
